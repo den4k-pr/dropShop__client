@@ -1,0 +1,139 @@
+
+@import "../../utils/variables";
+
+.profile{
+    margin-left: auto;
+    &__menu{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        transition: .2s ease-in-out;
+        cursor: initial;
+        top: 60px;
+        right: 0;
+        border-radius: 0 0 0 15px;
+
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 10px 20px -10px #b6b6b6;
+
+        width: 100%;
+        max-width: 300px;
+
+        &--loading{
+            border: 4px solid rgba(0, 0, 0, 0.3);
+            border-top: 4px solid #333;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin: 25px auto;
+          }
+          
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+
+        &--top{
+            padding: 25px;
+
+            border-bottom: 1px solid #e1e1e1;
+            
+            &-name{
+                font-size: 22px;
+                line-height: 30px;
+                padding-bottom: 5px;
+                font-weight: 600;
+            }
+
+            &-text{
+                font-size: 14px;
+                opacity: 0.7;
+            }
+        }
+
+        &--bottom{
+            display: flex;
+            flex-direction: column;
+            
+            a{
+                font-size: 14px;
+                line-height: 22px;
+                border-bottom: 1px solid #e1e1e1;
+                padding: 12px 25px;
+                display: block;
+
+                &:hover{
+                    background-color: #e1e1e1;
+                }
+            }
+        }
+        &--register,
+        &--login{
+            background-color: #0f1627;
+            padding: 20px;
+            @include flex-box("center");
+
+            &-title{
+                color: #fff;
+
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 22px;
+                padding-bottom: 15px;
+            }
+
+            &-button{
+                background-color: transparent;
+                text-align: center;
+                color: #fff;
+                border: 2px solid #fff;
+
+                font-size: 16px;
+                font-weight: 600;
+                padding: 8px 0px;
+                width: 100%;
+                max-width: 200px;
+                transition: .2s;
+
+                &:hover{
+                    background-color: #fff;
+                    color: #0f1627;
+                }
+            }
+        }
+        &--register{
+            background-color: #fff;
+
+            &-title{
+                color: #0f1627;
+            }
+
+            &-message{
+                color: #0f1627;
+                text-align: center;
+
+                padding-bottom: 10px;
+                font-size: 12px;
+            }
+
+            &-button{
+                color: #0f1627;
+                border: 2px solid #0f1627;
+
+                &:hover{
+                    background-color: #0f1627;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &__link:hover{
+        .profile__menu{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
