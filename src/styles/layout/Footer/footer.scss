@@ -1,0 +1,217 @@
+
+@import "../../utils/variables";
+
+.footer{
+    background-color: #0f1627;
+    color: #fff;
+
+    padding: 15px;
+
+    @include flex-box("center");
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    .container{
+        padding: 15px 0 !important;
+    }
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        padding: 80px 15px !important;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+
+        gap: 50px;
+
+        &--column:first-child{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            flex: 58.33%;
+        }
+
+        &--column{
+            flex: 33.333%;
+            min-width: 200px;
+            
+            &-title{
+                color: #fff;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22px;
+                padding-bottom: 15px;
+            }
+
+            &-categories{
+                display: flex;
+                flex-direction: column;
+                
+                gap: 15px;
+
+                &-link{
+                    color: #ffffffa2;
+                    font-size: 14px;
+
+                    &:hover{
+                        color: #fff;
+                    }
+                }
+            }
+
+            &-contacts{
+                display: flex;
+                flex-direction: column;
+                margin-left: auto;
+                
+                gap: 30px;
+
+                .contact--icons{
+                    padding: 20px;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    
+                    img{
+                        background-color: #fff;
+                        border-radius: 50%;
+                        border: 1px solid #0f1627;
+                    }
+                }
+                .contact{
+                    border-bottom: 1px solid #fff;
+
+                    &-title{
+                        color: #ffffffa2;
+
+                        font-size: 14px;
+                    }
+
+                    &--box{
+                        display: flex;
+                        align-items: center;
+
+                        gap: 15px;
+                        padding: 20px;
+
+                        &-index{
+                            color: #ffffff;
+                            font-size: 15px;
+                        }
+
+                        &-link{
+                            color: #fff;
+                            font-size: 15px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+
+                .contact:hover{
+                    border-bottom: 1px solid #ffbc1f;
+
+                    .contact--box{
+
+                        &-index{
+                            color: #ffbc1f;
+                        }
+
+                        &-link{
+                            color: #ffbc1f;
+                        }
+                    }
+
+                    .contact--icons{
+                        &-index{
+                            color: #ffbc1f;
+                        }   
+                    }
+                }
+            }
+        }
+    }
+
+    &--bottom{
+        border-top: 1px solid #3f424d;
+
+        padding: 25px 15px 15px 15px;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        gap: 20px;
+
+        display: flex;
+        flex-direction: column;
+
+        &-text{
+            order: 2;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 300;
+            letter-spacing: 1px;
+
+            text-align: center;
+        }
+
+        &-up{
+            order: 1;
+            border-radius: 5px;
+            transform: rotate(-90deg);
+            transition: .2s;
+
+            background-color:  #ffbc1f;
+            background-image: url("/icons/arrowUp.png");
+            background-repeat: no-repeat;
+            background-size: 30px;
+            background-position: center;
+            display: block;
+
+            height: 40px;
+            width: 40px;
+
+            &:hover{
+                background-color: rgb(249, 125, 37);
+            }
+        }
+    }
+
+    &--bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+    }
+}
+
+@media(min-width: 600px) {
+    .footer{
+        
+        &--bottom{
+            flex-direction: row;
+            justify-content: space-between;
+
+            &-text{
+                order: 1;
+
+                text-align: left;
+            }
+
+            &-up{
+                order: 2;
+            }
+        }
+    }
+}
+
+@media(min-width: 840px) {
+    .footer__row{
+        flex-wrap: nowrap;
+    }
+}

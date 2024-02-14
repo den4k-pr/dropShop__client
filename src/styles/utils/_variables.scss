@@ -1,0 +1,34 @@
+
+
+
+@mixin flex-box($justify) {
+    display: flex;
+    flex-wrap: wrap;
+    
+    align-items: center;
+    justify-content: #{$justify};
+}
+
+$maxWidht: 1439;
+
+@mixin adaptiv-font($pcSize, $modSize) {
+    $addSize: $pcSize - $modSize;
+    $addModSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        font-size: calc(#{$modSize + px} + #{$addModSize} * ((100vw - 320px) / #{$maxWidht}));
+    }
+    @media (min-width: 767px) {
+        font-size: calc(#{$modSize + px} + #{$addSize} * (100vw / #{$maxWidht}));
+    }
+}
+
+@mixin adaptiv-gap($pcSize, $modSize) {
+    $addSize: $pcSize - $modSize;
+    $addModSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        gap: calc(#{$modSize + px} + #{$addModSize} * ((100vw - 320px) / #{$maxWidht}));
+    }
+    @media (min-width: 767px) {
+        gap: calc(#{$modSize + px} + #{$addSize} * (100vw / #{$maxWidht}));
+    }
+}

@@ -1,0 +1,120 @@
+
+@import "../utils/variables";
+
+.signin{
+    @include flex-box("center");
+    flex-direction: column;
+
+    margin-top: 0;
+
+    &__nav:nth-child(1){
+        background-color: #fff;
+    }
+    &__nav:nth-child(2){
+        background-color: #e5e5e5;
+    }
+    &__nav{
+        flex: 50%;
+        width: 100%;
+        padding: 20px;
+
+        @include flex-box("center");
+        flex-direction: column;
+
+        &--propose{
+            width: 100%;
+            max-width: 400px;
+
+
+            text-align: left;
+            &-title{
+                color: #565656;
+                padding-bottom: 15px;
+            }
+
+            &-section{
+                @include flex-box("left");
+
+                gap: 15px;
+                padding: 5px 0;
+            }
+        }
+
+        &-title{
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 30px;
+            padding-bottom: 15px;
+
+            text-align: center;
+        }
+
+        &--form{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            width: 100%;
+            margin: 0 auto;
+
+            .form-top-inputWidth{
+                width: 100%;
+            }
+            
+            &-top{
+                @include flex-box("space-between");
+                flex-wrap: nowrap;
+
+                gap: 20px;
+                padding-top: 10px;
+            }
+
+            &-label{
+                font-size: 14px;
+                opacity: 0.7;
+                line-height: 18px;
+                padding-bottom: 5px;
+                padding-top: 10px;
+            }
+
+            &-input{
+                background-color: #fff !important;
+                font-size: 16px;
+                padding: 10px;
+                border-bottom: 2px solid grey;
+                border-radius: 3px;
+            }
+
+            &-button{
+                background-color: #0f1627;
+                padding: 15px;
+                border-radius: 3px;
+                margin-top: 15px;
+                transition: .1s;
+
+                &:hover{
+                    background-color: #1b273c;
+                }
+            }
+        }
+    }
+
+}
+
+@media(min-width: 991px){
+    .signin{
+        margin-top: -240px;
+    }
+}
+
+@media(min-width: 600px){
+    .signin{
+        flex-direction: row;
+    }
+    .signin__nav--form{
+        width: 400px;
+    }
+    .form-top-inputWidth{
+        max-width: 100%;
+    }
+}

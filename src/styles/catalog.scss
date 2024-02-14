@@ -1,0 +1,229 @@
+
+@import "./utils/variables";
+
+.catalogMessage{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #5f6d87;
+    padding: 80px 0;
+}
+
+.catalog{
+    padding: 60px 0;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(242, 244, 245);
+
+    .navigation.container{
+        padding: 0 0 40px 0;
+    }
+}
+
+.catalog__box{
+    padding: 0 24px;
+
+    &-products{
+        @include flex-box("center");
+
+        gap: 15px;
+    }
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+    margin-top: 30px;
+
+    &-button{
+        background-color: #fff;
+        font-size: 16px;
+        color: grey;
+        width: 40px;
+        height: 40px;
+        border-radius: 3px;
+        transition: .1s;
+
+        &:hover{
+            background-color: #ffbc1f;
+            color: #fff;
+        }
+
+        &:active{
+            background-color: rgb(249, 125, 37);
+            color: #fff;
+        }
+    }
+    .pagination-buttonArrow:first-child{
+        transform: rotate(180deg);
+    }
+    .pagination-buttonArrow{
+
+        &:hover{
+            svg path{
+                fill: #ffffff;
+            }
+        }
+        &:active{
+            svg path{
+                fill: rgb(255, 255, 255);
+            }
+        }
+    }
+    .buttonactive{
+        background-color: rgb(249, 125, 37);
+        color: #fff;
+    }
+}
+
+.catalog-navigation--list{
+    position: absolute;
+    background-color: #fff;
+    
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: .1s;
+    z-index: 2;
+
+    &-link{
+        transition: .2s;
+
+        cursor: pointer;
+
+        a{
+            padding: 15px 20px;
+            display: block;
+        }
+
+        &:hover{
+            background-color: #5f6d87;
+            a{
+                color: #fff;
+            }
+        }
+    }
+}
+.navigation{
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid #b7c1d2;
+
+    .main--title{
+        padding-bottom: 50px;
+    }
+
+    &__row{
+        @include flex-box("center");
+
+        gap: 15px;
+
+        &--column{
+            display: none;
+            &-category{
+
+                background-color: #fff;
+                padding: 16px;
+                border-radius: 5px;
+                padding-right: 70px;
+                min-width: 280px;
+
+                position: relative;
+                white-space: nowrap;
+                display: block;
+                cursor: pointer;
+
+                &:after{
+                    content: "";
+    
+                    display: block;
+    
+                    position: absolute;
+    
+                    top: 20px;
+                    right: 10px;
+    
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid #000000;
+                }
+            }
+
+            &--prices{
+                @include flex-box("none");
+                flex-wrap: nowrap;
+
+                gap: 20px;
+
+                &--price{
+
+                    .price-input{
+                        padding: 15px;
+                        border-radius: 5px;
+                        width: 130px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navigation__search{
+    max-width: 740px;
+    display: flex;
+
+    width: 100%;
+
+    &-filtry{
+        background-color: #fff;
+        color: #000;
+
+        border-radius: 5px;
+        padding: 14px 10px;
+        margin-right: 10px;
+        height: 53px;
+
+        &::after{
+            content: "";
+            display: block;
+
+        }
+    }
+
+    &-search{
+        padding: 15px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    &-image{
+        width: 25px;
+        height: 25px;
+        margin-left: -40px;
+        margin-top: 10px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .navigation__search{
+        max-width: 390px;
+    }
+}
+
+@media(min-width: 900px) {
+    .navigation__row--column{
+        display: block;
+    }
+    .navigation__search{
+        margin-top: 25px;
+
+        &-filtry{
+            display: none;
+        }
+    }
+}
